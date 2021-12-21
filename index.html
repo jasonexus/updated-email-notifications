@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="x-apple-disable-message-reformatting">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <title></title>
+    <!--[if mso]>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    <style>
+        table, td, div, h1, p {font-family: 'Poppins', sans-serif;}
+        /* table, td {border:2px solid #000000 !important;} */
+    </style>
+</head>
+<body style="margin:0;padding:0;">
+    <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ffffff;">
+        <tr>
+            <td align="center" style="padding:0;">
+                <table role="presentation" style="width:602px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;">
+                    <tr>
+                        <td align="center" style="padding:30px 0 20px 0;background: transparent;">
+                            <img id="logo" src="images/elev-logo.png" alt="Elev Logo" width="150" style="height:auto;display:block;"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="padding:40px 0 30px 0;background: transparent;">
+                            <img id="chat" src="images/chats.png" alt="chat-image" width="300" style="height:auto;display:block;"/>
+                            <div style="font-size: 30px; font-weight: 500; color: #1f1f1f;">
+                                <p class="card-title">
+                                    You Have A New Chat Message!
+                                </p>
+                            </div>
+                            
+                            <p class="subtext" style="font-size: 16px;">
+                                You have received a new chat message from <span id="user-email">'user name.'</span>
+                            </p>
+                            <button class="get-started-button" id="continue-button" onclick="continueButton()">
+                                Continue
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:20px;background:#f9f9fa;">
+                            <!--UNSUBSCRIBE BUTTON -->
+                            <p class="unsubscribe">If these emails are getting annoying, please feel free to <a id="unsubscribe-button" href="#">unsubscribe.</a></p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+
+
+    <script>
+        function continueButton() {
+          document.getElementById("continue-button").innerHTML = "Hello World";
+        }
+    </script>
+
+</body>
+</html>
