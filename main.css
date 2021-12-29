@@ -42,3 +42,25 @@
   color: #1f1f1f;
   font-weight: 600;
 }
+
+.subtext {
+  padding: 0px 20px 0px 20px;
+}
+
+.copy-text {
+  font-family: Poppins, sans-serif;
+  color: "#1f1f1f";
+}
+
+a:visited {
+  color: #1f1f1f;
+}
+
+.copy-to-clipboard {
+  cursor: pointer;
+  border-color: transparent;
+}
+
+a:hover {
+  color: #797979;
+}

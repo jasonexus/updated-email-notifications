@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title></title>
     <!--[if mso]>
     <noscript>
@@ -19,7 +20,7 @@
     </noscript>
     <![endif]-->
     <style>
-        table, td, div, h1, p {font-family: 'Poppins', sans-serif;}
+        table, td, div, h1, p, a, i {font-family: 'Poppins', sans-serif;}
         /* table, td {border:2px solid #000000 !important;} */
     </style>
 </head>
@@ -35,32 +36,47 @@
                     </tr>
                     <tr>
                         <td align="center" style="padding:40px 0 30px 0;background: transparent;">
-                            <img id="chat" src="images/Celebration-amico.png" alt="congratulations-image" width="300" style="height:auto;display:block;"/>
+                            <img id="chat" src="images/welcome-to-elev.png" alt="welcome-image" width="300" style="height:auto;display:block;"/>
                             <div style="font-size: 30px; font-weight: 500; color: #1f1f1f;">
                                 <p class="card-title">
-                                    Congratulations!
+                                    Welcome!
                                 </p>
                             </div>
                             <p class="subtext" style="font-size: 16px;">
-                                Your account <span id="user-email">'insert email'</span> has just been registered with Elev Homes.
+                                Thank-you for joining Elev! To start exploring the Elev app, you'll need the verification code below.
                             </p>
-                            <a href="#">
+                            <h1 id="code" style="font-size: 24px; font-weight: bold;">
+                                123456
+                            </h1>
+                            <a class="copy-to-clipboard" onclick="copyElementText('code')">
                                 <!--CONTINUE BUTTON -->
-                                <button class="get-started-button" id="continue-button">
-                                    Get Started
-                                </button>
+                                <i class="fa fa-copy">  <span class="copy-text">Copy Verification Code</span></i>
                             </a>
                         </td>
                     </tr>
                     <tr>
                         <td style="padding:20px;background:#f9f9fa;">
                             <!--UNSUBSCRIBE BUTTON -->
-                            <p class="unsubscribe">If these emails are getting annoying, please feel free to <a id="unsubscribe-button" href="#">unsubscribe.</a></p>
+                            <p class="unsubscribe">The Elev Team</p>
                         </td>
                     </tr>
                 </table>
             </td>
         </tr>
     </table>
+
+
+    <script>
+    // Copies the code to the clipboard
+    function copyElementText(id) {
+    var text = document.getElementById(id).innerText;
+    var elem = document.createElement("textarea");
+    document.body.appendChild(elem);
+    elem.value = text;
+    elem.select();
+    document.execCommand("copy");
+    document.body.removeChild(elem);
+}
+    </script>
 </body>
 </html>
