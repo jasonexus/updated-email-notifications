@@ -4,24 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="x-apple-disable-message-reformatting">
-    <link rel="stylesheet" href="main.css">
+    <!-- <link rel="stylesheet" href="main.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title></title>
-    <!--[if mso]>
-    <noscript>
-        <xml>
-            <o:OfficeDocumentSettings>
-                <o:PixelsPerInch>96</o:PixelsPerInch>
-            </o:OfficeDocumentSettings>
-        </xml>
-    </noscript>
-    <![endif]-->
     <style>
         table, td, div, h1, p, a, i {font-family: 'Poppins', sans-serif;}
         /* table, td {border:2px solid #000000 !important;} */
+        a:visited{color:#1f1f1f !important}
+        a:hover{color: #797979 !important}
     </style>
 </head>
 <body style="margin:0;padding:0;">
@@ -42,22 +35,26 @@
                                     Welcome!
                                 </p>
                             </div>
-                            <p class="subtext" style="font-size: 16px;">
+                            <p class="subtext" style="font-size: 16px; padding: 0px 20px 0px 20px;">
                                 Thank-you for joining Elev! To start exploring the Elev app, you'll need the verification code below.
                             </p>
                             <h1 id="code" style="font-size: 30px; font-weight: bold;">
                                 123456
                             </h1>
-                            <a class="copy-to-clipboard" onclick="copyElementText('code')">
-                                <!--CONTINUE BUTTON -->
-                                <i class="fa fa-copy">  <span class="copy-text">Copy Verification Code</span></i>
+                            <a class="copy-to-clipboard" onclick="copyElementText('code')" style="cursor: pointer; border-color: transparent; font-style: italic;">
+                               Copy Verification Code
                             </a>
                         </td>
                     </tr>
                     <tr>
                         <td style="padding:20px;background:#f9f9fa;">
                             <!--UNSUBSCRIBE BUTTON -->
-                            <p class="unsubscribe">The Elev Team</p>
+                            <p class="unsubscribe" 
+                            style="display: block; 
+                            font-size: 12px; 
+                            align-items: center; 
+                            text-align: center; 
+                            color: #1f1f1f;">The Elev Team</p>
                         </td>
                     </tr>
                 </table>
@@ -69,11 +66,36 @@
     <script>
     // Copies the code to the clipboard
     function copyElementText(id) {
+    var isiOSDevice = navigator.userAgent.match(/ipad|iphone/i);
+
+    if (isiOSDevice){
+        var el = document.createElement("textarea");
+        var oldContentEditable = el.contentEditable,
+        oldReadOnly = el.readOnly,
+        range = document.createRange();
+
+        el.contentEditable = true;
+        el.readOnly = false;
+        range.selectNodeContents(el);
+
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(range);
+
+        el.setSelectionRange(0, 999999);
+
+        el.contentEditable = oldContentEditable;
+        el.readOnly = oldReadOnly;
+
+        document.execCommand('copy');
+    }
+    
     var text = document.getElementById(id).innerText;
     var elem = document.createElement("textarea");
     document.body.appendChild(elem);
     elem.value = text;
     elem.select();
+    elem.setSelectionRange(0, 99999);
     document.execCommand("copy");
     document.body.removeChild(elem);
 }
